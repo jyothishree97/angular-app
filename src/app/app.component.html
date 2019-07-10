@@ -1,0 +1,19 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<app-navbar></app-navbar>
+<app-searchbar (item)="response=$event"></app-searchbar>
+<hr>
+<div class="container">
+    <div class="flex-container">
+    <div *ngFor="let item of response">
+      <div class="d-flex p-3 bg-secondary">
+        <app-cards [item]="item.name"></app-cards>
+      </div>
+      <app-playbutton [item1]="item.url"></app-playbutton>&nbsp;&nbsp;
+      <app-button [itemData]="item.name"></app-button>
+      
+    </div>
+  </div>
+  </div>
+
+<router-outlet></router-outlet>
